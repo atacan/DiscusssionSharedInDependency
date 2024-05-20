@@ -4,12 +4,15 @@
 	
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct DiscusssionSharedInDependencyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store(initialState: Content.State(), reducer: {
+                Content()
+            }))
         }
     }
 }
